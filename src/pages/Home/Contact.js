@@ -11,11 +11,11 @@ const Contact = () => {
             <div className="flex justify-center items-center">
                 <div>
                     <form className="w-96">
-                        <input type="text" placeholder="Type here" class="input w-full  mb-4" />
-                        <input type="text" placeholder="Type here" class="input w-full mb-4" />
-                        <textarea type="text" placeholder="Type here" class="input w-full  h-24" ></textarea>
+                        <input type="text" placeholder="Type here" className="input w-full  mb-4" />
+                        <input type="text" placeholder="Type here" className="input w-full mb-4" />
+                        <textarea type="text" placeholder="Type here" className="input w-full  h-24" ></textarea>
                     </form>
-                    <Button>Submit</Button>
+                    <Button className="w-full ">Submit</Button>
                 </div>
             </div>
         </section>

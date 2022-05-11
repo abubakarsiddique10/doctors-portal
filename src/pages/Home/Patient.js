@@ -5,8 +5,8 @@ const Patient = ({ patient }) => {
         <div className="card shadow-xl font-white p-10">
             <p>{details}</p>
             <div className="flex items-center mt-5">
-                <div class="avatar">
-                    <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="avatar">
+                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={img} />
                     </div>
                 </div>

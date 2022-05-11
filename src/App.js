@@ -5,7 +5,7 @@ import Header from "./pages/Shared/Header";
 
 function App() {
   return (
-    <div className="px-28">
+    <div className="px-4 max-w-7xl mx-auto">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
