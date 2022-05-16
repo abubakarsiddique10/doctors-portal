@@ -5,7 +5,6 @@ import 'react-day-picker/dist/style.css';
 import banner from '../../assets/images/chair.png';
 const AppointmentBanner = ({ date, setDate }) => {
 
-    console.log(date)
     return (
         <section>
             <div className="hero bg-base-200">
