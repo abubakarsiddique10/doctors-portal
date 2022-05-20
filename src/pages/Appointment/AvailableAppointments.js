@@ -10,13 +10,13 @@ const AvailableAppointments = ({ date }) => {
     const formatedDate = format(date, 'PP');
 
     /* useEffect(() => {
-        fetch(`http://localhost:5000/availabe?date=${formatedDate}`)
+        fetch(`https://fathomless-wave-58176.herokuapp.com/availabe?date=${formatedDate}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [formatedDate]) */
 
     // second step
-    const {data: services, isLoading, refetch} = useQuery(['available', formatedDate], () => fetch(`http://localhost:5000/availabe?date=${formatedDate}`)
+    const {data: services, isLoading, refetch} = useQuery(['available', formatedDate], () => fetch(`https://fathomless-wave-58176.herokuapp.com/availabe?date=${formatedDate}`)
         .then(res => res.json()))
 
     if(isLoading) {

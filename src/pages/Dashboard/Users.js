@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://fathomless-wave-58176.herokuapp.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -14,7 +14,7 @@ const Users = () => {
         <Loading/>
     }
     const makeAdmin = (email, role) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://fathomless-wave-58176.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Beares ${localStorage.getItem('accessToken')}`

@@ -5,7 +5,7 @@ const useAdmin = user => {
     const email = user.email;
     useEffect(()=> {
         if(email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://fathomless-wave-58176.herokuapp.com/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
     const [user] = useAuthState(auth);
-    const { name, slots, _id } = treatment;
+    const { name, slots, _id, price } = treatment;
     const treatmentDate = format(date, 'PP');
    
     const handleBooking = event => {
@@ -15,13 +15,14 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
             treatmentId: _id,
             treatment: name,
             slot: slot,
+            price,
             date: treatmentDate,
             patient: user.displayName,
             email: user.email,
             phone: event.target.phone.value,
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://fathomless-wave-58176.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json',
@@ -40,10 +41,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
             refetch()
             setTreatment(null)
         })
-
-    
-        
-
         
     }
    

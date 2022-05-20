@@ -4,6 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
 import useAdmin from "../hooks/useAdmin";
 const Dashboard = () => {
+   
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
     return(
@@ -21,7 +22,12 @@ const Dashboard = () => {
                  <li><Link to='/dashboard'>Dashboard</Link></li>
                 <li><Link to='/dashboard/review'>Review</Link></li>
                 <li><Link to='/dashboard/myhistory'>MyHistory</Link></li>
-                    {admin && <li><Link to='/dashboard/users'>AllUsers</Link></li>}
+                    {admin && <>
+                        <li><Link to='/dashboard/users'>AllUsers</Link></li>
+                        <li><Link to='/dashboard/addDoctor'>AddDoctor</Link></li>
+                        <li><Link to='/dashboard/manageDoctors'>Manage Doctors</Link></li>
+                        
+                    </>}
                 </ul>
             </div>
         </div>

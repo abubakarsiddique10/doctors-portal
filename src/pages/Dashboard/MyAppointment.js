@@ -1,16 +1,16 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 const MyAppointment = () => {
     const [appointments, setAppointments] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
-    console.log(localStorage.getItem('accessToken'))
+   console.log(appointments)
     useEffect(()=> {
             if(user) {
-                fetch(`http://localhost:5000/booking?email=${user.email}`, {
+                fetch(`https://fathomless-wave-58176.herokuapp.com/booking?email=${user.email}`, {
                     method: 'GET',
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -40,6 +40,7 @@ const MyAppointment = () => {
                             <th>Date</th>
                             <th>Time</th>
                             <th>Treatment</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +51,13 @@ const MyAppointment = () => {
                                 <td>{appointment.date}</td>
                                 <td>{appointment.slot}</td>
                                 <td>{appointment.treatment}</td>
+                                <td>
+                                    {(appointment.price && !appointment.paid) && <Link to={`/dashboard/payment/${appointment._id}`}><button className="btn btn.success">Pay</button></Link>}
+                                    {(appointment.price && appointment.paid) && <div>
+                                        <button className="btn btn.success">Paid</button>
+                                        <p>Transection Id: {appointment.transectionId}</p>   
+                                    </div>}
+                                </td>
                             </tr>)
                         }
                     </tbody>
