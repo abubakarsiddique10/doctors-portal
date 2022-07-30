@@ -27,7 +27,7 @@ const Header = () => {
                 <button onClick={logout} className="btn btn-ghost">Sign Up</button>
             </div>
             : <li><Link to='/login'>Login</Link></li>}
-        <li><Link className="bg-[#2490eb] text-white px-8 py-3 ml-5 font-medium" to='/appointment'>APPOINTMENT</Link></li>
+        <li><Link className="bg-[#2490eb] text-white px-7 py-3 ml-5 text-[16px] font-medium" to='/appointment'>GET APPOINTMENT</Link></li>
     </>
     return (
         <header>
