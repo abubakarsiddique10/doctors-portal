@@ -16,25 +16,27 @@ const AvailableAppointments = ({ date }) => {
     }, [formatedDate]) */
 
     // second step
-    const {data: services, isLoading, refetch} = useQuery(['available', formatedDate], () => fetch(`https://fathomless-wave-58176.herokuapp.com/availabe?date=${formatedDate}`)
+    const { data: services, isLoading, refetch } = useQuery(['available', formatedDate], () => fetch(`https://fathomless-wave-58176.herokuapp.com/availabe?date=${formatedDate}`)
         .then(res => res.json()))
 
-    if(isLoading) {
-        return <Loading/>
+    if (isLoading) {
+        return <Loading />
     }
     return (
-        <section className="mt-20">
-            <h1 className="text-center text-2xl text-secondary font-bold">Available Appointments: {format(date, 'PP')}</h1>
-            <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {
-                    services.map(service => <AvaillableAppointment
-                        key={service._id}
-                        service={service}
-                        setTreatment={setTreatment}
-                    ></AvaillableAppointment>)
-                }
+        <section className="my-20">
+            <div className="container">
+                <h1 className="text-center text-2xl text-secondary font-bold">Available Appointments: {format(date, 'PP')}</h1>
+                <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {
+                        services.map(service => <AvaillableAppointment
+                            key={service._id}
+                            service={service}
+                            setTreatment={setTreatment}
+                        ></AvaillableAppointment>)
+                    }
+                </div>
+                {treatment && <BookingModal refetch={refetch} setTreatment={setTreatment} services={services} date={date} treatment={treatment} />}
             </div>
-            {treatment && <BookingModal refetch={refetch} setTreatment={setTreatment} services={services} date={date} treatment={treatment} />}
         </section>
     )
 }

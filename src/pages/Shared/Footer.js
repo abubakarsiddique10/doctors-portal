@@ -2,7 +2,7 @@ import React from "react";
 import bgImg from '../../assets/images/bg.png';
 const Footer = () => {
     return (
-        <footer style={{ background: `url(${bgImg})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className=" p-10  mt-20">
+        <div style={{ background: `url(${bgImg})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className=" container">
             <div className="footer">
                 <div>
                     <span className="footer-title">Services</span>
@@ -25,8 +25,8 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </div>
-            <p className="text-center">Copyright 2022 All Rights Reserved</p>
-        </footer>
+            <p className="text-center py-10">Copyright 2022 All Rights Reserved</p>
+        </div>
     )
 }
 export default Footer;

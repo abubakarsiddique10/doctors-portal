@@ -3,9 +3,9 @@ import treatment from '../../assets/images/treatment.png';
 import Button from "../Shared/Button";
 const Treatment = () => {
     return (
-        <section >
-            <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+        <section className="mb-28">
+            <div className="hero container">
+                <div className="hero-content flex-col lg:flex-row-reverse p-0">
                     <img src={treatment} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>

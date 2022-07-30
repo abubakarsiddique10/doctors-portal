@@ -30,18 +30,20 @@ const Testimonial = () => {
 
     ]
     return (
-        <section className="my-20">
-            <div  className="flex justify-between">
-                <div className="">
-                    <h3 className="text-xl">Testimonial</h3>
-                    <h1 className="text-4xl">What Our Patients Says</h1>
+        <section className="mb-28">
+            <div className="container">
+                <div className="flex justify-between">
+                    <div className="">
+                        <h3 className="text-xl">Testimonial</h3>
+                        <h1 className="text-4xl">What Our Patients Says</h1>
+                    </div>
+                    <img className="w-48" src={qoute} alt="" />
                 </div>
-                <img className="w-48" src={qoute} alt="" />
-            </div>
-            <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {
-                    patients.map(patient => <Patient key={patient._id} patient={patient} />)
-                }
+                <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {
+                        patients.map(patient => <Patient key={patient._id} patient={patient} />)
+                    }
+                </div>
             </div>
         </section>
     )

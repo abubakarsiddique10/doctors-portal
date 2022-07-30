@@ -28,8 +28,8 @@ const Info = () => {
         }
     ]
     return (
-        <section>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        <section className="mb-28">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 container">
                 {
                     information.map(info => <Card key={info._id} info={info} />)
                 }

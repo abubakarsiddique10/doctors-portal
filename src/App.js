@@ -19,7 +19,7 @@ import Payment from "./pages/Dashboard/Payment";
 
 function App() {
   return (
-    <div className="px-4 max-w-7xl mx-auto">
+    <div className="">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,16 +27,16 @@ function App() {
           <Appointment />
         </RequireAuth>} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-          <Route index element={<MyAppointment/>}></Route>
-          <Route path="review" element={<MyReview/>}></Route>
-          <Route path="myhistory" element={<MyHistory/>}></Route>
-          <Route path="payment/:id" element={<Payment/>}/>
+          <Route index element={<MyAppointment />}></Route>
+          <Route path="review" element={<MyReview />}></Route>
+          <Route path="myhistory" element={<MyHistory />}></Route>
+          <Route path="payment/:id" element={<Payment />} />
           <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
           <Route path="addDoctor" element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>}></Route>
           <Route path="manageDoctors" element={<ManageDoctors></ManageDoctors>}></Route>
         </Route>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <ToastContainer />
     </div>
